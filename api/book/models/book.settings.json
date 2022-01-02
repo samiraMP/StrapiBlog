@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Book",
+  "info": {
+    "name": "Book",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "category": {
+      "model": "category"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "writer": {
+      "model": "writer"
+    },
+    "language": {
+      "model": "language"
+    },
+    "translatedid": {
+      "type": "integer"
+    },
+    "order": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

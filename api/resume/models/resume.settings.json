@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Resume",
+  "info": {
+    "name": "Resume",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "text"
+    },
+    "Image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "language": {
+      "model": "language"
+    },
+    "ContentNew": {
+      "type": "richtext"
+    }
+  }
+}
